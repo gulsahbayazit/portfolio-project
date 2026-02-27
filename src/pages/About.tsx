@@ -68,12 +68,7 @@ const About = () => {
           {/* Web Developer */}
           <div className="w-full md:w-[30%] text-center pb-16">
             <i className="fa-solid fa-code text-[2rem] pb-4 block" />
-            <a
-              href="/works/webdev"
-              className="text-black no-underline hover:text-[var(--color-primary-yellow)]"
-            >
-              <h4 className="font-bold text-xl">Web Developer</h4>
-            </a>
+            <h4 className="font-bold text-xl">Web Developer</h4>
             <br />
             <p>
               "I am passionate about programming and love the challenge of
@@ -159,12 +154,7 @@ const About = () => {
           {/* Designer */}
           <div className="w-full md:w-[30%] text-center pb-16">
             <i className="fa-solid fa-draw-polygon text-[2rem] pb-4 block" />
-            <a
-              href="/works/design"
-              className="text-black no-underline hover:text-[var(--color-primary-yellow)]"
-            >
-              <h4 className="font-bold text-xl">Designer</h4>
-            </a>
+            <h4 className="font-bold text-xl">Designer</h4>
             <br />
             <p>
               "I enjoy designing user interfaces and user experience with skills
@@ -196,12 +186,7 @@ const About = () => {
           {/* Architect */}
           <div className="w-full md:w-[30%] text-center pb-16">
             <i className="fa-solid fa-pen-ruler text-[2rem] pb-4 block" />
-            <a
-              href="/works/arc"
-              className="text-black no-underline hover:text-[var(--color-primary-yellow)]"
-            >
-              <h4 className="font-bold text-xl">Architect</h4>
-            </a>
+            <h4 className="font-bold text-xl">Architect</h4>
             <br />
             <p>
               "As an experienced architect with many years of background, I have
