@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("/TuskerGrotesk-2500Medium.ttf");
+}
+
+@theme {
+  --font-tusker: "Tusker Grotesk", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --text-hero: clamp(10rem, 14vw, 14rem);
+  --text-bio: clamp(1.2rem, 2vw, 2rem);
+
+  /* Colors */
+  --color-primary: #f5eee6;
+  --color-primary-variant: #f6e5d3;
+  --color-primary-red: #c83c27;
+  --color-primary-blue: #474b74;
+  --color-primary-green: #387144;
+  --color-primary-yellow: #cd9029;
+  --color-primary-pink: #c56957;
+  --color-primary-beige: #ccbca1;
+  --color-black: #1f1f20;
+  --color-black-variant: #454547;
+  --color-dark: #171a22;
+
+  /* Transition */
+  --transition-default: all 400ms ease;
+  --bg-about-foto: url("/src/assets/foto.webp");
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply font-sans text-primary leading-[1.7];
+    background-color: var(--color-black);
+  }
+
+  body.popup-open {
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-[2.5rem];
+  }
+
+  section {
+    @apply mt-32;
+  }
+
+  img {
+    @apply block w-full object-cover;
+  }
+
+  a {
+    transition: var(--transition-default);
+    @apply no-underline;
+  }
+}
+
+@layer components {
+  .btn,
+  .btn-light {
+    @apply bg-primary text-dark border border-primary px-4 py-2 rounded
+           shadow-[2px_2px_5px_rgba(0,0,0,0.3)];
+    transition: var(--transition-default);
+  }
+
+  .btn:hover,
+  .btn-light:hover {
+    @apply bg-primary-variant border-transparent text-dark;
+  }
+
+  .btn:focus,
+  .btn-light:focus {
+    @apply outline-none;
+  }
+
+  .underline-accent {
+    @apply relative inline-block font-bold 
+      after:content-[''] after:absolute after:left-0 
+      after:bottom-[-2px] after:w-full after:h-[2px] after:bg-[#333];
+  }
+
+  .bg-home {
+    background-image: url("../src/assets/backgroundImage.png");
+  }
+
+  .bg-about-foto {
+    background-image: var(--bg-about-foto);
+  }
+
+  .container-portfolio {
+    @apply py-[20%];
+  }
+}
