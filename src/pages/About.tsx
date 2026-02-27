@@ -144,7 +144,6 @@ const About = () => {
                 className="devicon-netlify-plain colored"
                 label="Netlify"
               />
-              <TechIcon className="devicon-azure-plain colored" label="Azure" />
             </div>
             <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
               Testing:

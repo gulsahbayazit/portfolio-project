@@ -10,6 +10,7 @@
   --font-sans: "Montserrat", sans-serif;
 
   --text-hero: clamp(10rem, 14vw, 14rem);
+  --text-title: clamp(4rem, 6vw, 6rem);
   --text-bio: clamp(1.2rem, 2vw, 2rem);
 
   /* Colors */

@@ -1,8 +1,8 @@
 import project_1 from "../assets/project_1.webp";
 import project_2 from "../assets/project_2.webp";
 import project_3 from "../assets/project_3.webp";
-import project_4 from "../assets/gk-wedding.webp";
-import project_5 from "../assets/project_4.webp";
+import project_4 from "../assets/project_4.webp";
+import project_5 from "../assets/project_5.webp";
 import virus_1 from "../assets/virus_1.webp";
 import virus_2 from "../assets/virus_2.webp";
 import virus_3 from "../assets/virus_3.webp";
@@ -27,7 +27,7 @@ const WorkWebDev = () => {
     <div className="min-h-screen ">
       <div className="container mx-auto pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <h1 className="col-span-full text-center font-semibold underline text-[var(--color-primary)] pt-12 pb-8 max-sm:pt-8 max-sm:pb-8 text-xl">
+          <h1 className="col-span-full text-center text-[var(--color-primary)] font-tusker text-title pt-12 pb-8 max-sm:pt-8 max-sm:pb-8 text-xl">
             Web Development Projects
           </h1>
 

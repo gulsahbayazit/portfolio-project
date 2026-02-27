@@ -24,7 +24,7 @@ const WorkDesign = () => {
         <div className="container mx-auto pb-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             +{" "}
-            <h1 className="col-span-full text-center font-semibold underline text-[var(--color-black-variant)] pt-2 pb-8 max-sm:pt-8 max-sm:pb-8 text-xl">
+            <h1 className="col-span-full text-center text-[var(--color-black-variant)] font-tusker text-title pt-2 pb-8 max-sm:pt-8 max-sm:pb-8 text-xl">
               UX/UI Design Projects
             </h1>
             <Projects
