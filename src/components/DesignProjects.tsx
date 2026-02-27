@@ -72,7 +72,7 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
   }, [showPopup]);
 
   return (
-    <div className="col-span-1 mb-4 pb-2 z-[9999]">
+    <div className="col-span-1 mb-4 pb-2">
       {/* Card */}
       <div
         className="relative rounded-[20px] overflow-hidden cursor-pointer bg-white shadow-[0_19px_38px_rgba(0,0,0,0.7),0_15px_12px_rgba(0,0,0,0.22)]"
@@ -92,7 +92,7 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
 
       {/* Popup */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999]">
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[9999]">
           {/* Popup inner */}
           <div
             ref={popupRef}
