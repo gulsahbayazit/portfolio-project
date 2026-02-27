@@ -68,7 +68,7 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
   }, []);
 
   return (
-    <div className="col-span-1 mb-4 pb-2">
+    <div className="col-span-1 mb-4 pb-2 z-[9999]">
       {/* Card */}
       <div
         className="relative rounded-[20px] overflow-hidden cursor-pointer bg-white shadow-[0_19px_38px_rgba(0,0,0,0.7),0_15px_12px_rgba(0,0,0,0.22)]"
@@ -88,6 +88,20 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
           <p className="text-[0.9rem] font-semibold text-[var(--color-black)]">
             {info}
           </p>
+          <div className="flex flex-row flex-wrap gap-2 mt-3">
+            {techStacks.map((tech, i) => (
+              <span
+                key={i}
+                className="rounded-[1.2rem] px-2 py-1 text-[0.8rem] whitespace-nowrap"
+                style={{
+                  backgroundColor: "var(--color-primary-variant)",
+                  color: "var(--color-black)",
+                }}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 

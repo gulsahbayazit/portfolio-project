@@ -1,4 +1,5 @@
 import CV from "../assets/cv.pdf";
+import { TechIcon } from "../components/TechIcon";
 
 const About = () => {
   const handleButtonClick = () => {
@@ -80,26 +81,80 @@ const About = () => {
               applications by my problem solving skills."
             </p>
             <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
-              Language I speak:
+              Tech Stack:
             </h5>
-            <ul className="list-none p-0 m-0">
-              <li>HTML</li>
-              <li>CSS3</li>
-              <li>Javascript</li>
-              <li>Typescript</li>
-              <li>React</li>
-              <li>Zustand</li>
-              <li>Next.js</li>
-              <li>NodeJS</li>
-              <li>MongoDB</li>
-            </ul>
+
+            <div className="flex flex-wrap gap-4 justify-center pt-2">
+              <TechIcon className="devicon-html5-plain colored" label="HTML5" />
+              <TechIcon className="devicon-css3-plain colored" label="CSS3" />
+              <TechIcon
+                className="devicon-javascript-plain colored"
+                label="JavaScript"
+              />
+              <TechIcon
+                className="devicon-typescript-plain colored"
+                label="TypeScript"
+              />
+              <TechIcon
+                className="devicon-react-original colored"
+                label="React"
+              />
+              <TechIcon className="devicon-nextjs-plain" label="Next.js" />
+              <TechIcon
+                className="devicon-nodejs-plain colored"
+                label="NodeJS"
+              />
+              <TechIcon
+                className="devicon-mongodb-plain colored"
+                label="MongoDB"
+              />
+              <TechIcon
+                className="devicon-tailwindcss-plain colored"
+                label="Tailwind"
+              />
+              <TechIcon
+                className="devicon-bootstrap-plain colored"
+                label="Bootstrap"
+              />
+            </div>
+
             <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
               Dev Tools:
             </h5>
-            <p className="mb-[0.2rem]">
-              Github, Git, Tailwind, Bootstrap, Azure DevOps, Unit Tests,
-              Playwright Tests
-            </p>
+            <div className="flex flex-wrap gap-4 justify-center pt-2">
+              <TechIcon className="devicon-github-original" label="GitHub" />
+              <TechIcon className="devicon-git-plain colored" label="Git" />
+              <TechIcon
+                className="devicon-azuredevops-plain colored"
+                label="Azure DevOps"
+              />
+              <TechIcon className="devicon-vite-plain colored" label="Vite" />
+            </div>
+
+            <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
+              Deployment & Services:
+            </h5>
+            <div className="flex flex-wrap gap-4 justify-center pt-2">
+              <TechIcon className="devicon-vercel-original" label="Vercel" />
+              <TechIcon
+                className="devicon-firebase-plain colored"
+                label="Firebase"
+              />
+              <TechIcon
+                className="devicon-netlify-plain colored"
+                label="Netlify"
+              />
+              <TechIcon className="devicon-azure-plain colored" label="Azure" />
+            </div>
+            <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
+              Testing:
+            </h5>
+            <div className="flex flex-wrap gap-3 justify-center pt-2">
+              {/* Unit Tests & Manual Tests have no devicon */}
+              <span className="text-sm self-center">
+                Playwright, Unit Tests, Manual Tests
+              </span>
+            </div>
           </div>
 
           {/* Designer */}
@@ -120,10 +175,17 @@ const About = () => {
             <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
               Tools I design with:
             </h5>
-            <p className="mb-[0.2rem]">Figma</p>
-            <p className="mb-[0.2rem]">Sketch</p>
-            <p className="mb-[0.2rem]">Adobe Photoshop</p>
-            <p className="mb-[0.2rem]">Adobe Indesign</p>
+            <div className="flex flex-wrap gap-4 justify-center pt-2">
+              <TechIcon className="devicon-figma-plain colored" label="Figma" />
+              <TechIcon
+                className="devicon-sketch-plain colored"
+                label="Sketch"
+              />
+              <TechIcon
+                className="devicon-photoshop-plain colored"
+                label="Adobe"
+              />
+            </div>
             <h5 className="font-semibold text-[1rem] pt-[0.8rem] pb-[0.4rem]">
               Things I enjoy doing:
             </h5>
