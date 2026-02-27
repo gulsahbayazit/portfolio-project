@@ -68,7 +68,7 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
   }, []);
 
   return (
-    <div className="col-span-1 mb-4 pb-2 z-[9999]">
+    <div className="col-span-1 mb-4 pb-2">
       {/* Card */}
       <div
         className="relative rounded-[20px] overflow-hidden cursor-pointer bg-white shadow-[0_19px_38px_rgba(0,0,0,0.7),0_15px_12px_rgba(0,0,0,0.22)]"
@@ -94,7 +94,7 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
                 key={i}
                 className="rounded-[1.2rem] px-2 py-1 text-[0.8rem] whitespace-nowrap"
                 style={{
-                  backgroundColor: "var(--color-primary-variant)",
+                  backgroundColor: "var(--color-primary-yellow)",
                   color: "var(--color-black)",
                 }}
               >
@@ -107,75 +107,79 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
 
       {/* Popup */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999]">
-          {/* Popup inner */}
-          <div
-            ref={popupRef}
-            className="max-w-[90%] max-h-[90%] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-10"
-          >
-            {/* Close button */}
-            <button
-              className="fixed z-10 right-24 top-16 bg-white text-[var(--color-black)] text-xl font-semibold border-none cursor-pointer lg:right-24 lg:top-24 max-sm:right-2 max-sm:top-16"
-              onClick={handleClosePopup}
+        <>
+          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[9999]">
+            {/* Popup inner */}
+            <div
+              ref={popupRef}
+              className="max-w-[90%] max-h-[90%] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-10"
             >
-              ✕
-            </button>
-            {/* Carousel */}
-            <div className="relative w-full overflow-hidden">
-              <div
-                className="flex transition-transform duration-500"
-                style={{ transform: `translateX(-${index * 100}%)` }}
+              {/* Close button */}
+              <button
+                className="fixed z-10 right-24 top-16 bg-white text-[var(--color-black)] text-xl font-semibold border-none cursor-pointer lg:right-24 lg:top-24 max-sm:right-2 max-sm:top-16"
+                onClick={handleClosePopup}
               >
-                {images.map((img, i) => (
-                  <div key={i} className="min-w-full scale-90">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full object-cover"
-                    />
-                  </div>
+                ✕
+              </button>
+              {/* Carousel */}
+              <div className="relative w-full overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500"
+                  style={{ transform: `translateX(-${index * 100}%)` }}
+                >
+                  {images.map((img, i) => (
+                    <div key={i} className="min-w-full scale-90">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Project details */}
+              <h3 className="text-[1.4rem] font-bold text-[var(--color-primary-yellow)] mt-4">
+                {title}
+              </h3>
+              <p className="text-[var(--color-black-variant)]">{description}</p>
+
+              <p className="text-[var(--color-black-variant)] font-semibold mt-4">
+                Developed and designed by:
+              </p>
+              <p className="text-[var(--color-black-variant)]">
+                {collaborators}
+              </p>
+
+              <p className="text-[var(--color-black-variant)] font-semibold mt-4">
+                Tech Stacks that I used:
+              </p>
+              <div>
+                {techStacks.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="inline-block mt-3 mr-4 mb-1 border border-[var(--color-primary-yellow)] rounded-[1.2rem] px-2 py-1 text-[var(--color-primary-yellow)] text-[0.8rem]"
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
+
+              <p className="text-[var(--color-black-variant)] font-semibold mt-4">
+                See it on github:
+              </p>
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-black hover:underline"
+              >
+                {link}
+              </a>
             </div>
-
-            {/* Project details */}
-            <h3 className="text-[1.4rem] font-bold text-[var(--color-primary-yellow)] mt-4">
-              {title}
-            </h3>
-            <p className="text-[var(--color-black-variant)]">{description}</p>
-
-            <p className="text-[var(--color-black-variant)] font-semibold mt-4">
-              Developed and designed by:
-            </p>
-            <p className="text-[var(--color-black-variant)]">{collaborators}</p>
-
-            <p className="text-[var(--color-black-variant)] font-semibold mt-4">
-              Tech Stacks that I used:
-            </p>
-            <div>
-              {techStacks.map((tech, i) => (
-                <span
-                  key={i}
-                  className="inline-block mt-3 mr-4 mb-1 border border-[var(--color-primary-yellow)] rounded-[1.2rem] px-2 py-1 text-[var(--color-primary-yellow)] text-[0.8rem]"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <p className="text-[var(--color-black-variant)] font-semibold mt-4">
-              See it on github:
-            </p>
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-black hover:underline"
-            >
-              {link}
-            </a>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
