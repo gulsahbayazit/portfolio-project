@@ -1,4 +1,4 @@
-import CV from "../assets/cv.pdf";
+import CV from "../assets/CV-GB.pdf";
 import { TechIcon } from "../components/TechIcon";
 
 const About = () => {
