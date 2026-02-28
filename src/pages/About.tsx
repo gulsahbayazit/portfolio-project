@@ -1,4 +1,3 @@
-import CV from "../assets/CV-GB.pdf";
 import { TechIcon } from "../components/TechIcon";
 
 const About = () => {
@@ -53,7 +52,7 @@ const About = () => {
           <button onClick={handleButtonClick} className="btn">
             Learn more
           </button>
-          <a href={CV} download className="btn">
+          <a href="/public/CV-GB.pdf" download className="btn">
             Download CV
           </a>
         </div>
