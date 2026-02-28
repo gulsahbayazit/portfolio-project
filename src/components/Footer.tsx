@@ -1,6 +1,4 @@
-import React from "react";
-
-function Footer() {
+const Footer = () => {
   return (
     <footer className="w-full text-center py-4 bg-[var(--color-primary)]  text-[var(--color-black-variant)]">
       <span>
@@ -9,6 +7,6 @@ function Footer() {
       </span>
     </footer>
   );
-}
+};
 
 export default Footer;
