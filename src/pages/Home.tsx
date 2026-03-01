@@ -20,9 +20,9 @@ const Home = () => {
 
   return (
     <div className="m-0 p-0 min-h-screen pb-20 bg-cover bg-center bg-repeat bg-home">
-      <div className="relative z-[999] pl-12 pr-4 pt-48 md:pt-[26vh] text-primary">
+      <div className="relative z-[999] px-6 pt-24 md:pt-[26vh] text-primary">
         <div className="flex flex-col md:flex-row justify-center">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 text-center md:text-left">
             <div className="flex flex-col">
               <h1 className="font-tusker text-hero leading-[0.96]">
                 {roles[(index + 1) % roles.length]}
@@ -33,7 +33,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 self-center">
+          <div className="w-full md:w-1/2 self-center text-center md:text-left">
             <h4 className="text-bio leading-[1.3] pb-8 pt-4 md:pb-0 md:pt-0">
               I am a, <br />
               <span className="underline-accent">
@@ -47,7 +47,7 @@ const Home = () => {
               user friendly and functional websites <br />
               using the latest technologies.
             </h4>
-            <div className="pt-8">
+            <div className="pt-8 flex md:block justify-center">
               <button onClick={handleButtonClick} className="btn">
                 See my projects
               </button>
