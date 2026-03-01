@@ -28,10 +28,15 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
   link,
 }) => {
   const [showPopup, setShowPopup] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
   const handleShowPopup = () => setShowPopup(true);
-  const handleClosePopup = useCallback(() => setShowPopup(false), []);
+
+  const handleClosePopup = useCallback(() => {
+    setShowPopup(false);
+    setImagesLoaded(false);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -58,6 +63,19 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
       document.body.classList.remove("popup-open");
       document.body.style.overflow = "";
     }
+  }, [showPopup]);
+
+  useEffect(() => {
+    if (!showPopup) return;
+    let loaded = 0;
+    images.forEach((img) => {
+      const i = new Image();
+      i.src = img.src;
+      i.onload = () => {
+        loaded++;
+        if (loaded === images.length) setImagesLoaded(true);
+      };
+    });
   }, [showPopup]);
 
   useEffect(() => {
@@ -122,21 +140,25 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
                 ✕
               </button>
               {/* Carousel */}
-              <div className="relative w-full overflow-hidden">
-                <div
-                  className="flex transition-transform duration-500"
-                  style={{ transform: `translateX(-${index * 100}%)` }}
-                >
-                  {images.map((img, i) => (
-                    <div key={i} className="min-w-full scale-90">
-                      <img
-                        src={img.src}
-                        alt={img.alt}
-                        className="w-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="relative w-full overflow-hidden min-h-[200px]">
+                {!imagesLoaded ? (
+                  <div className="w-full h-[200px] bg-gray-200 animate-pulse rounded-lg" />
+                ) : (
+                  <div
+                    className="flex transition-transform duration-500"
+                    style={{ transform: `translateX(-${index * 100}%)` }}
+                  >
+                    {images.map((img, i) => (
+                      <div key={i} className="min-w-full scale-90">
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Project details */}

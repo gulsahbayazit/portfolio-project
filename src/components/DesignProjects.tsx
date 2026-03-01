@@ -34,10 +34,14 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
   highFidelityImage,
 }) => {
   const [showPopup, setShowPopup] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
   const handleShowPopup = () => setShowPopup(true);
-  const handleClosePopup = useCallback(() => setShowPopup(false), []);
+  const handleClosePopup = useCallback(() => {
+    setShowPopup(false);
+    setImagesLoaded(false);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -71,6 +75,24 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
     }
   }, [showPopup]);
 
+  // Preload carousel images
+  useEffect(() => {
+    if (!showPopup) return;
+    let loaded = 0;
+    images.forEach((img) => {
+      const i = new Image();
+      i.src = img.src;
+      i.onload = () => {
+        loaded++;
+        if (loaded === images.length) setImagesLoaded(true);
+      };
+      i.onerror = () => {
+        loaded++;
+        if (loaded === images.length) setImagesLoaded(true);
+      };
+    });
+  }, [showPopup, images]);
+
   return (
     <div className="col-span-1 mb-4 pb-2 px-4 md:px-0">
       {/* Card */}
@@ -93,7 +115,6 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
       {/* Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[9999]">
-          {/* Popup inner */}
           <div
             ref={popupRef}
             className="relative max-w-[90%] max-h-[90%] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-10"
@@ -105,22 +126,27 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
             >
               ✕
             </button>
+
             {/* Carousel */}
-            <div className="relative w-full overflow-hidden">
-              <div
-                className="flex transition-transform duration-500"
-                style={{ transform: `translateX(-${index * 100}%)` }}
-              >
-                {images.map((img) => (
-                  <div key={img.id} className="min-w-full scale-90">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
+            <div className="relative w-full overflow-hidden min-h-[200px]">
+              {!imagesLoaded ? (
+                <div className="w-full h-[200px] bg-gray-200 animate-pulse rounded-lg" />
+              ) : (
+                <div
+                  className="flex transition-transform duration-500"
+                  style={{ transform: `translateX(-${index * 100}%)` }}
+                >
+                  {images.map((img) => (
+                    <div key={img.id} className="min-w-full scale-90">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Content */}
@@ -128,11 +154,9 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
               <h4 className="text-[var(--color-black-variant)] font-semibold">
                 {title}
               </h4>
-
               <p className="pt-2 text-[var(--color-black-variant)]">
                 {description}
               </p>
-
               <p className="pt-2 text-[var(--color-black-variant)]">
                 <span className="font-bold">Timeline:</span> 10 weeks
               </p>
