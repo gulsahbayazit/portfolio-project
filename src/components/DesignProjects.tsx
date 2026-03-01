@@ -96,11 +96,11 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
           {/* Popup inner */}
           <div
             ref={popupRef}
-            className="max-w-[90%] max-h-[90%] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-10"
+            className="relative max-w-[90%] max-h-[90%] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-10"
           >
             {/* Close button */}
             <button
-              className="fixed z-10 right-24 top-16 bg-white text-[var(--color-black)] text-xl font-semibold border-none cursor-pointer lg:right-24 lg:top-24 max-sm:right-2 max-sm:top-16"
+              className="absolute z-10 right-3 top-3 bg-white text-[var(--color-black)] text-xl font-semibold border-none cursor-pointer"
               onClick={handleClosePopup}
             >
               ✕
