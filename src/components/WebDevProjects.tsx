@@ -130,7 +130,7 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
             {/* Popup inner */}
             <div
               ref={popupRef}
-              className="relative w-[90%] max-h-[90vh] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-6"
+              className="relative w-[90%] max-h-[90vh] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-6 max-sm:text-center"
             >
               {/* Close button */}
               <button
