@@ -195,7 +195,7 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
                 href={link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-black hover:underline"
+                className="text-black hover:underline break-all"
               >
                 {link}
               </a>
