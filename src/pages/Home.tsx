@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const roles = ["DEVELOPER", "DESIGNER"];
+  const roles = ["DEVELOPERh ", "DESIGNER"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
