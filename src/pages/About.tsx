@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <div className="flex flex-wrap items-stretch">
-      <div className="w-full md:w-2/3 bg-black text-primary pl-12 pt-8 pb-12">
+      <div className="w-full md:w-2/3 bg-black text-primary px-6 md:px-12 pt-8 pb-12">
         <h1
           className="
     font-tusker z-[999]
