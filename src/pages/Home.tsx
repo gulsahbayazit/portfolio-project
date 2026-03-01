@@ -34,7 +34,7 @@ const Home = () => {
           </div>
 
           <div className="w-full md:w-1/2 self-center text-center md:text-left">
-            <h4 className="text-bio leading-[1.3] pb-8 pt-4 md:pb-0 md:pt-0">
+            <h4 className="text-bio leading-[1.3] pb-4 pt-2 md:pb-0 md:pt-0">
               I am a, <br />
               <span className="underline-accent">
                 Software Developer &amp; Designer
