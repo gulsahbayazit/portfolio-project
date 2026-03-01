@@ -48,6 +48,13 @@ const About = () => {
           from a completely fresh angle.
         </p>
 
+        <div className="flex gap-2 mt-2 max-sm:justify-center">
+          <button onClick={handleButtonClick} className="btn">
+            Learn more
+          </button>
+        </div>
+      </div>
+
       {/* Photo */}
       <div className="w-full md:w-1/3 min-h-[300px] bg-about-foto bg-cover bg-right-top" />
 
