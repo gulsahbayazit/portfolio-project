@@ -47,7 +47,7 @@ const Home = () => {
               user friendly and functional websites <br />
               using the latest technologies.
             </h4>
-            <div className="pt-4 md:pt-8 flex md:block justify-center">
+            <div className="pt-2 md:pt-8 flex md:block justify-center">
               <button onClick={handleButtonClick} className="btn">
                 See my projects
               </button>
