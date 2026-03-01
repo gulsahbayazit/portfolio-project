@@ -63,7 +63,7 @@ const ProjectsWebdev: React.FC<IProjectsWebdevProps> = ({
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1000);
+    }, 3000);
     return () => clearInterval(intervalId);
   }, []);
 
