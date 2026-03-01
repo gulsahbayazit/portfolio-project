@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full text-[var(--color-primary)] bg-[var(--color-black)] py-16">
+    <div className="flex flex-col items-center text-center justify-center h-full text-[var(--color-primary)] bg-[var(--color-black)] py-16">
       <h3 className="text-3xl font-semibold mb-6">
         Would you like to get in touch?
       </h3>
