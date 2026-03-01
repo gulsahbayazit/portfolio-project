@@ -117,7 +117,7 @@ const DesignProjects: React.FC<IDesignProjectsProps> = ({
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[9999]">
           <div
             ref={popupRef}
-            className="relative max-w-[90%] max-h-[90%] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-10"
+            className="relative w-[90%] max-h-[90vh] overflow-y-auto bg-white p-16 rounded-2xl max-sm:p-6 max-sm:text-center"
           >
             {/* Close button */}
             <button
